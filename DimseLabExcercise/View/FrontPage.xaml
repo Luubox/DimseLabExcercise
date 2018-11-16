@@ -9,7 +9,20 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <Pivot x:Name="rootPivot" Title="Category Title">
+            <PivotItem Header="Project">
+                <!--Pivot content goes here-->
+                <TextBlock Text="Content of section 1."/>
+            </PivotItem>
+            <PivotItem Header="Participants">
+                <!--Pivot content goes here-->
+                <TextBlock Text="Content of section 2."/>
+            </PivotItem>
+            <PivotItem Header="Thing">
+                <!--Pivot content goes here-->
+                <TextBlock Text="Content of section 3."/>
+            </PivotItem>
+        </Pivot>
 
     </Grid>
 </Page>
