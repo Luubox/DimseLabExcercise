@@ -23,9 +23,9 @@ namespace DimseLabExcercise.Model
             Things = new ObservableCollection<Thing>();
         }
 
-        public void Add(string thingName, DateTime lendOutDate, DateTime handInDate, List<string> keywords)
+        public void Add(string name, DateTime lendOutDate, DateTime handInDate, List<string> keywords)
         {
-            Things.Add(new Thing(thingName,lendOutDate,handInDate, keywords));
+            Things.Add(new Thing(name, lendOutDate, handInDate, keywords));
         }
     }
 }
