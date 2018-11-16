@@ -11,16 +11,15 @@
     <Grid>
         <Pivot x:Name="rootPivot" Title="Category Title">
             <PivotItem Header="Project">
-                <!--Pivot content goes here-->
-                <TextBlock Text="Content of section 1."/>
+              <ListView ItemsSource="{Binding ProjectCollection}">
+                
+              </ListView>
             </PivotItem>
             <PivotItem Header="Participants">
-                <!--Pivot content goes here-->
-                <TextBlock Text="Content of section 2."/>
+                <ListView ItemsSource="{Binding ParticipantCollection}"></ListView>
             </PivotItem>
             <PivotItem Header="Thing">
-                <!--Pivot content goes here-->
-                <TextBlock Text="Content of section 3."/>
+                <ListView ItemsSource="{Binding ThingCollection}"></ListView>
             </PivotItem>
         </Pivot>
 
