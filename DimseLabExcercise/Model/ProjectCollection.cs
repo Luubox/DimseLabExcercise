@@ -23,9 +23,9 @@ namespace DimseLabExcercise.Model
             Projects = new ObservableCollection<Project>();
         }
 
-        public void Add(string projectName, string projectSummary, List<Participant> projectParticipants)
+        public void Add(string name, string summary, List<Participant> participants)
         {
-            Projects.Add(new Project(projectName, projectSummary, projectParticipants));
+            Projects.Add(new Project(name, summary, participants));
         }
     }
 }

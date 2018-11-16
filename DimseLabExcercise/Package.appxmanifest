@@ -29,7 +29,7 @@
 
   <Applications>
     <Application Id="App"
-      Executable="$targetparticipantNametoken$.exe"
+      Executable="$targetnametoken$.exe"
       EntryPoint="DimseLabExcercise.App">
       <uap:VisualElements
         DisplayName="DimseLabExcercise"

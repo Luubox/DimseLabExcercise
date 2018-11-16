@@ -8,19 +8,19 @@ namespace DimseLabExcercise.Model
 {
     class Project
     {
-        private string _projectName;
-        private string _projectSummary;
-        private List<Participant> _projectParticipants;
+        private string _name;
+        private string _summary;
+        private List<Participant> _participants;
 
-        public string ProjectName { get => _projectName; set => _projectName = value; }
-        public string Summary { get => _projectSummary; set => _projectSummary = value; }
-        public List<Participant> ProjectParticipants { get => _projectParticipants; set => _projectParticipants = value; }
+        public string Name { get => _name; set => _name = value; }
+        public string Summary { get => _summary; set => _summary = value; }
+        public List<Participant> Participants { get => _participants; set => _participants = value; }
 
-        public Project(string projectName, string projectSummary, List<Participant> projectParticipants)
+        public Project(string name, string summary, List<Participant> participants)
         {
-            _projectName = projectName;
-            _projectSummary = projectSummary;
-            _projectParticipants = projectParticipants;
+            _name = name;
+            _summary = summary;
+            _participants = participants;
         }
     }
 }
