@@ -21,6 +21,7 @@ namespace DimseLabExcercise.Model
         public ParticipantCatalog()
         {
             Participants = new ObservableCollection<Participant>();
+            Participants.Add(new Participant("Jonas", "bhui@gnraeoi.com"));
         }
 
         public void Add(string name, string email)
