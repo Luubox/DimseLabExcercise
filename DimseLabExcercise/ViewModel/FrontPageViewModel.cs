@@ -12,9 +12,9 @@ namespace DimseLabExcercise.ViewModel
 {
     class FrontPageViewModel : INotifyPropertyChanged
     {
-        public ThingCatalog ThingCatalog;
-        public ProjectCatalog ProjectCatalog;
-        public ParticipantCatalog ParticipantCatalog;
+        public ThingCatalog ThingCatalog { get; set; }
+        public ProjectCatalog ProjectCatalog { get; set; }
+        public ParticipantCatalog ParticipantCatalog { get; set; }
 
         public FrontPageViewModel()
         {
