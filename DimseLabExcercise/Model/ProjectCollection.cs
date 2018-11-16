@@ -9,23 +9,23 @@ namespace DimseLabExcercise.Model
 {
     class ProjectCollection
     {
-        private static ThingCollection _instance = new ThingCollection();
+        private static ProjectCollection _instance = new ProjectCollection();
 
-        public static ThingCollection Instance
+        public static ProjectCollection Instance
         {
             get { return _instance; }
         }
 
-        public ObservableCollection<Thing> Things { get; set; }
+        public ObservableCollection<Project> Projects { get; set; }
 
-        public ThingCollection()
+        public ProjectCollection()
         {
-            Things = new ObservableCollection<Thing>();
+            Projects = new ObservableCollection<Project>();
         }
 
-        public void Add(string thingName, DateTime lendOutDate, DateTime handInDate, List<string> keywords)
+        public void Add(string projectName, string projectSummary)
         {
-            Things.Add(new Thing(thingName, lendOutDate, handInDate, keywords));
+            Projects.Add(new Project(projectName, projectSummary));
         }
     }
 }

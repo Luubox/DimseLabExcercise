@@ -8,16 +8,16 @@ namespace DimseLabExcercise.Model
 {
     class Participant
     {
-        private string _name;
-        private string _email;
+        private string _participantName;
+        private string _participantEmail;
 
-        public string Name { get => _name; set => _name = value; }
-        public string Email { get => _email; set => _email = value; }
+        public string Name { get => _participantName; set => _participantName = value; }
+        public string Email { get => _participantEmail; set => _participantEmail = value; }
 
-        public Participant(string name, string email)
+        public Participant(string participantName, string participantEmail)
         {
-            _name = name;
-            _email = email;
+            _participantName = participantName;
+            _participantEmail = participantEmail;
         }
     }
 }

@@ -25,11 +25,12 @@ namespace DimseLabExcercise.Model
             set { _keywords = value; }
         }
 
-        public Thing(string thingName, DateTime lendOutDate, DateTime handInDate)
+        public Thing(string thingName, DateTime lendOutDate, DateTime handInDate, List<string> keywords)
         {
             _thingName = thingName;
             _lendOutDate = lendOutDate;
             _handInDate = handInDate;
+            _keywords = keywords;
         }
     }
 }

@@ -9,15 +9,15 @@ namespace DimseLabExcercise.Model
     class Project
     {
         private string _projectName;
-        private string _summary;
+        private string _projectSummary;
 
         public string ProjectName { get => _projectName; set => _projectName = value; }
-        public string Summary { get => _summary; set => _summary = value; }
+        public string Summary { get => _projectSummary; set => _projectSummary = value; }
 
-        public Project(string projectName, string summary)
+        public Project(string projectName, string projectSummary)
         {
             _projectName = projectName;
-            _summary = summary;
+            _projectSummary = projectSummary;
         }
     }
 }
