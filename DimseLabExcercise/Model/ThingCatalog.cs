@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace DimseLabExcercise.Model
 {
-    class ThingCollection
+    class ThingCatalog
     {
-        private static ThingCollection _instance = new ThingCollection();
+        private static ThingCatalog _instance = new ThingCatalog();
 
-        public static ThingCollection Instance
+        public static ThingCatalog Instance
         {
             get { return _instance; }
         }
 
         public ObservableCollection<Thing> Things { get; set; }
 
-        public ThingCollection()
+        public ThingCatalog()
         {
             Things = new ObservableCollection<Thing>();
         }
