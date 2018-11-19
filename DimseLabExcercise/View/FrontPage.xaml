@@ -20,10 +20,19 @@
                     <ListView ItemsSource="{Binding ProjectCatalog.Projects}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Horizontal" Height="100">
                                     <TextBlock Width="auto" Padding="5" Text="{Binding Name}"/>
                                     <TextBlock Width="auto" Padding="5" Text="{Binding Summary}"/>
-                                    <TextBlock Width="auto" Padding="5" Text="{Binding Participants}"/>
+                                    <ListView ItemsSource="{Binding Participants}">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Padding="5" Text="{Binding Name}"/>
+                                                    <TextBlock Padding="5" Text="{Binding Email}"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>

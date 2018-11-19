@@ -10,7 +10,6 @@ namespace DimseLabExcercise.Model
     class ProjectCatalog
     {
         private static ProjectCatalog _instance = new ProjectCatalog();
-
         public static ProjectCatalog Instance
         {
             get { return _instance; }
@@ -21,6 +20,11 @@ namespace DimseLabExcercise.Model
         public ProjectCatalog()
         {
             Projects = new ObservableCollection<Project>();
+            Projects.Add(new Project("build robot", "sdfghjkjhgfdertgv dfhvn",
+                new List<Participant>(){new Participant("Ebbe", "ebva@easj.dk")
+                    ,ParticipantCatalog.Instance.Participants[0]}));
+            Projects.Add(new Project("RC CAR", "Lorem ipsum dfhvn",
+                new List<Participant>() { ParticipantCatalog.Instance.Participants[0], ParticipantCatalog.Instance.Participants[1], ParticipantCatalog.Instance.Participants[2] }));
         }
 
         public void Add(string name, string summary, List<Participant> participants)
