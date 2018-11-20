@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DimseLabExcercise.Model;
 using DimseLabExcercise.ViewModel;
 
 namespace DimseLabExcercise.Handler
@@ -19,7 +20,25 @@ namespace DimseLabExcercise.Handler
 
         public void CreateProject()
         {
-            Debug.WriteLine("Its Working_starwarsprequelmeme.gif");
+            // ProjectViewModel.Newproject.name (unikt)
+            // 1 ansvarlig
+            // easj email
+            // beskrivelse mindst 5 ord
+            foreach (var project in ProjectViewModel.ProjectCatalog.Projects)
+            {
+                if (project.Name == ProjectViewModel.NewProject.Name)
+                {
+                    Debug.WriteLine("Error");
+                }
+                else
+                {
+                    ProjectViewModel.NewProject.Participants.Add(ProjectViewModel.NewParticipant);
+                    ProjectViewModel.ProjectCatalog.Projects.Add(
+                        ProjectViewModel.NewProject);
+                    break;
+                }
+
+            }
         }
 
         public void DeleteProject()

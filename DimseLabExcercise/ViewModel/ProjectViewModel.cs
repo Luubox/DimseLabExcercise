@@ -34,11 +34,24 @@ namespace DimseLabExcercise.ViewModel
             }
         }
 
+        private Participant _newParticipant;
+        public Participant NewParticipant
+        {
+            get { return _newParticipant; }
+            set
+            {
+                _newParticipant = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ProjectViewModel()
         {
             ProjectCatalog = ProjectCatalog.Instance;
             ParticipantCatalog = ParticipantCatalog.Instance;
             ProjectHandler = new Handler.ProjectHandler(this);
+            NewProject = new Project();
+            NewParticipant = new Participant();
 
             CreateProjectCommand =
                 new RelayCommand(ProjectHandler.CreateProject);

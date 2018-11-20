@@ -81,14 +81,14 @@
                             </StackPanel>
 
                             <StackPanel Grid.Column="1" Grid.Row="0">
-                                <TextBox Name="NameTextBox" Text="{Binding NewProject.Name}" 
+                                <TextBox Name="NameTextBox" Text="{Binding NewProject.Name, Mode=TwoWay}" 
                                          Padding="5" HorizontalAlignment="Stretch" />
-                                <TextBox Name="SummaryTextBox" Text="{Binding NewProject.Summary}" 
+                                <TextBox Name="SummaryTextBox" Text="{Binding NewProject.Summary, Mode=TwoWay}" 
                                          Padding="5" HorizontalAlignment="Stretch" />
 
                                 <ListBox Name="ParticipantsComboBox" Height="100"
-                                             ItemsSource="{Binding ParticipantCatalog.Participants}"
-                                             SelectedItem="{Binding NewProject.Participants, Mode=TwoWay}">
+                                             ItemsSource="{Binding ParticipantCatalog.Participants, Mode=TwoWay}"
+                                             SelectedItem="{Binding NewParticipant, Mode=TwoWay}">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">

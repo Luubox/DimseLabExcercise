@@ -22,5 +22,10 @@ namespace DimseLabExcercise.Model
             _lastName = lastName;
             _email = email;
         }
+
+        public Participant()
+        {
+            
+        }
     }
 }

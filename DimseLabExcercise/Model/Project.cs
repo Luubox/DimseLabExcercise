@@ -27,5 +27,10 @@ namespace DimseLabExcercise.Model
             _participants = participants;
             _projectStartupDate = DateTime.Now;
         }
+
+        public Project()
+        {
+            
+        }
     }
 }
