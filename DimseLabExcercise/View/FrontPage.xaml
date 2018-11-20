@@ -17,12 +17,12 @@
         <Pivot x:Name="rootPivot" Title="DimseLabExercise">
             <PivotItem Header="Project">
                 <StackPanel>
-                    <ListView ItemsSource="{Binding ProjectCatalog.Projects}">
+                    <ListView ItemsSource="{Binding ProjectCatalog.Projects}" SelectedItem="{Binding SelectedProject, Mode=TwoWay}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal" Height="100">
-                                    <TextBlock Width="auto" Padding="5" Text="{Binding Name}"/>
-                                    <TextBlock Width="auto" Padding="5" Text="{Binding Summary}"/>
+                                    <TextBlock Width="100" Padding="5" Text="{Binding Name}"/>
+                                    <TextBlock Width="200" Padding="5" Text="{Binding Summary}"/>
                                     <ListView ItemsSource="{Binding Participants}">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
@@ -39,9 +39,17 @@
                     </ListView>
                 </StackPanel>
             </PivotItem>
-            <PivotItem Header="Participants">
-                <StackPanel>
-
+            <PivotItem Header="{Binding SelectedProject.Name, Mode=TwoWay}">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="{Binding SelectedProject.Name}"></TextBlock>
+                    <TextBlock Text="{Binding SelectedProject.Summary}"></TextBlock>
+                    <ListView ItemsSource="{Binding SelectedProject.Participants}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </StackPanel>
             </PivotItem>
             <PivotItem Header="Thing">

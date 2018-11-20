@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -16,11 +17,26 @@ namespace DimseLabExcercise.ViewModel
         public ProjectCatalog ProjectCatalog { get; set; }
         public ParticipantCatalog ParticipantCatalog { get; set; }
 
+        public Project _selectedProject;
+        public Project SelectedProject
+        {
+            get { return _selectedProject; }
+            set
+            {
+                _selectedProject = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+
         public FrontPageViewModel()
         {
             ThingCatalog = ThingCatalog.Instance;
             ProjectCatalog = ProjectCatalog.Instance;
             ParticipantCatalog = ParticipantCatalog.Instance;
+
+            SelectedProject = ProjectCatalog.Projects[0];
         }
 
 
