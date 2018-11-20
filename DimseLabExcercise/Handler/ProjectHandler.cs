@@ -16,6 +16,7 @@ namespace DimseLabExcercise.Handler
         public ProjectHandler(ProjectViewModel projectViewModel)
         {
             ProjectViewModel = projectViewModel;
+            
         }
 
         public void CreateProject()

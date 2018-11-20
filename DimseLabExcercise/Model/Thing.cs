@@ -18,11 +18,9 @@ namespace DimseLabExcercise.Model
         public DateTime HandInDate { get => _handInDate; set => _handInDate = value; }
         public List<string> Keywords { get => _keywords; set => _keywords = value; }
 
-        public Thing(string name, DateTime lendOutDate, DateTime handInDate, List<string> keywords)
+        public Thing(string name,  List<string> keywords)
         {
             _name = name;
-            _lendOutDate = lendOutDate;
-            _handInDate = handInDate;
             _keywords = keywords;
         }
     }
