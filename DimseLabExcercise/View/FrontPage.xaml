@@ -21,13 +21,14 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal" Height="100">
+                                    <TextBlock Width="auto" Padding="5" Text="{Binding ProjectStartupDate}"/>
                                     <TextBlock Width="100" Padding="5" Text="{Binding Name}"/>
                                     <TextBlock Width="200" Padding="5" Text="{Binding Summary}"/>
                                     <ListView ItemsSource="{Binding Participants}">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Padding="5" Text="{Binding Name}"/>
+                                                    <TextBlock Padding="5" Text="{Binding FirstName}"/>
                                                     <TextBlock Padding="5" Text="{Binding Email}"/>
                                                 </StackPanel>
                                             </DataTemplate>
@@ -46,15 +47,66 @@
                     <ListView ItemsSource="{Binding SelectedProject.Participants}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Name}" />
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding FirstName}" />
+                                    <TextBlock Text="{Binding LastName}"/>
+                                </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackPanel>
             </PivotItem>
-            <PivotItem Header="Thing">
+            <PivotItem Header="New Project">
                 <StackPanel>
+                    <StackPanel.DataContext>
+                        <viewModel:ProjectViewModel/>
+                    </StackPanel.DataContext>
 
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="5*" />
+                                <ColumnDefinition Width="3*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,0,10,0">
+                                <TextBlock Text="Project Name:" Padding="5"/>
+                                <TextBlock Text="Project Summary:" Padding="5"/>
+                                <TextBlock Text="Project Participants:" Padding="5"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Grid.Row="0">
+                                <TextBox Name="NameTextBox" Text="{Binding NewProject.Name}" 
+                                         Padding="5" HorizontalAlignment="Stretch" />
+                                <TextBox Name="SummaryTextBox" Text="{Binding NewProject.Summary}" 
+                                         Padding="5" HorizontalAlignment="Stretch" />
+
+                                <ListBox Name="ParticipantsComboBox" Height="100"
+                                             ItemsSource="{Binding ParticipantCatalog.Participants}"
+                                             SelectedItem="{Binding NewProject.Participants, Mode=TwoWay}">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding FirstName}" Margin="0,0,5,0" />
+                                                <TextBlock Text="{Binding LastName}" />
+                                                <!--<CheckBox/>-->
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </StackPanel>
+
+
+                        </Grid>
+                    </StackPanel>
+                    <Button Name="CreateProjectButton" Content="Create Project"
+                            HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                            Command="{Binding CreateProjectCommand}"/>
                 </StackPanel>
             </PivotItem>
         </Pivot>

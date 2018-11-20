@@ -1,40 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using DimseLabExcercise.Annotations;
+using DimseLabExcercise.Handler;
 using DimseLabExcercise.Model;
+using GalaSoft.MvvmLight.Command;
 
 namespace DimseLabExcercise.ViewModel
 {
-    class FrontPageViewModel : INotifyPropertyChanged
+    class ProjectViewModel : INotifyPropertyChanged
     {
-        public ThingCatalog ThingCatalog { get; set; }
+        public ProjectHandler ProjectHandler { get; set; }
         public ProjectCatalog ProjectCatalog { get; set; }
         public ParticipantCatalog ParticipantCatalog { get; set; }
 
-        private Project _selectedProject;
-        public Project SelectedProject
+        public ICommand CreateProjectCommand { get; set; }
+        public ICommand DeleteProjectCommand { get; set; }
+        public ICommand UpdateProjectCommand { get; set; }
+
+        private Project _newProject;
+        public Project NewProject
         {
-            get { return _selectedProject; }
+            get { return _newProject; }
             set
             {
-                _selectedProject = value;
+                _newProject = value;
                 OnPropertyChanged();
             }
         }
 
-        public FrontPageViewModel()
+        public ProjectViewModel()
         {
-            ThingCatalog = ThingCatalog.Instance;
             ProjectCatalog = ProjectCatalog.Instance;
             ParticipantCatalog = ParticipantCatalog.Instance;
+            ProjectHandler = new Handler.ProjectHandler(this);
 
-            SelectedProject = ProjectCatalog.Projects[0];
+            CreateProjectCommand =
+                new RelayCommand(ProjectHandler.CreateProject);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

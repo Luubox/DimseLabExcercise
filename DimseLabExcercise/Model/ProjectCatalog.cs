@@ -21,10 +21,14 @@ namespace DimseLabExcercise.Model
         {
             Projects = new ObservableCollection<Project>();
             Projects.Add(new Project("build robot", "sdfghjkjhgfdertgv dfhvn",
-                new List<Participant>(){new Participant("Ebbe", "ebva@easj.dk")
-                    ,ParticipantCatalog.Instance.Participants[0]}));
+                new List<Participant>(){
+                    new Participant("Ebbe", "Vang", "ebva@easj.dk"),
+                    ParticipantCatalog.Instance.Participants[0]}));
             Projects.Add(new Project("RC CAR", "Lorem ipsum dfhvn",
-                new List<Participant>() { ParticipantCatalog.Instance.Participants[0], ParticipantCatalog.Instance.Participants[1], ParticipantCatalog.Instance.Participants[2] }));
+                new List<Participant>(){
+                    ParticipantCatalog.Instance.Participants[0],
+                    ParticipantCatalog.Instance.Participants[1],
+                    ParticipantCatalog.Instance.Participants[2] }));
         }
 
         public void Add(string name, string summary, List<Participant> participants)

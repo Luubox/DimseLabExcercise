@@ -21,14 +21,17 @@ namespace DimseLabExcercise.Model
         public ParticipantCatalog()
         {
             Participants = new ObservableCollection<Participant>();
-            Participants.Add(new Participant("Jonas", "bhui@gnraeoi.com"));
-            Participants.Add(new Participant("bjarne", "bhasdui@gnraeoi.com"));
-            Participants.Add(new Participant("ole", "asdada@gnraeoi.com"));
+            Participants.Add(new Participant("Jonas", "Rasmussen", "bhui@gnraeoi.com"));
+            Participants.Add(new Participant("bjarne", "ingels", "bhasdui@gnraeoi.com"));
+            Participants.Add(new Participant("ole", "minet", "asdada@gnraeoi.com"));
+            Participants.Add(new Participant("lars", "minet", "asdada@gnraeoi.com"));
+            Participants.Add(new Participant("bente", "minet", "asdada@gnraeoi.com"));
+            Participants.Add(new Participant("lotte", "minet", "asdada@gnraeoi.com"));
         }
 
-        public void Add(string name, string email)
+        public void Add(string firstName, string lastName, string email)
         {
-            Participants.Add(new Participant(name, email));
+            Participants.Add(new Participant(firstName, lastName, email));
         }
     }
 }
