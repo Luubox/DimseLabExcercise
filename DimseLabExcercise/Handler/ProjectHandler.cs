@@ -15,11 +15,13 @@ namespace DimseLabExcercise.Handler
         public ProjectHandler(ProjectViewModel projectViewModel)
         {
             ProjectViewModel = projectViewModel;
+            
         }
 
         public void CreateProject()
         {
             Debug.WriteLine("Its Working_starwarsprequelmeme.gif");
+            
         }
 
         public void DeleteProject()

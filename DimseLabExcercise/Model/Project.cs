@@ -14,6 +14,7 @@ namespace DimseLabExcercise.Model
         private DateTime _projectStartupDate;
         private DateTime _projectEndDate;
 
+        public Guid ProjectId { get; private set; } = Guid.NewGuid();
         public string Name { get => _name; set => _name = value; }
         public string Summary { get => _summary; set => _summary = value; }
         public List<Participant> Participants { get => _participants; set => _participants = value; }
