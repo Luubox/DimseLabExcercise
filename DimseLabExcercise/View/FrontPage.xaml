@@ -22,14 +22,14 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal" Height="100">
                                     <TextBlock Width="auto" Padding="5" Text="{Binding ProjectStartupDate}"/>
-                                    <TextBlock Width="100" Padding="5" Text="{Binding Name}"/>
-                                    <TextBlock Width="200" Padding="5" Text="{Binding Summary}"/>
-                                    <ListView ItemsSource="{Binding Participants}">
+                                    <TextBlock Width="100" Padding="5" Text="{Binding Name, Mode=TwoWay}"/>
+                                    <TextBlock Width="200" Padding="5" Text="{Binding Summary, Mode=TwoWay}"/>
+                                    <ListView ItemsSource="{Binding Participants, Mode=TwoWay}">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Padding="5" Text="{Binding FirstName}"/>
-                                                    <TextBlock Padding="5" Text="{Binding Email}"/>
+                                                    <TextBlock Padding="5" Text="{Binding FirstName, Mode=TwoWay}"/>
+                                                    <TextBlock Padding="5" Text="{Binding Email, Mode=TwoWay}"/>
                                                 </StackPanel>
                                             </DataTemplate>
                                         </ListView.ItemTemplate>
@@ -87,8 +87,8 @@
                                          Padding="5" HorizontalAlignment="Stretch" />
 
                                 <ListBox Name="ParticipantsComboBox" Height="100"
-                                             ItemsSource="{Binding ParticipantCatalog.Participants, Mode=TwoWay}"
-                                             SelectedItem="{Binding NewParticipant, Mode=TwoWay}">
+                                             ItemsSource="{Binding ParticipantCatalog.Instance.Participants, Mode=TwoWay}"
+                                             SelectedItem="{Binding NewParticipant}">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel>

@@ -33,7 +33,9 @@ namespace DimseLabExcercise.Handler
                 }
                 else
                 {
-                    ProjectViewModel.NewProject.Participants.Add(ProjectViewModel.NewParticipant);
+                    //ProjectViewModel.NewProject.Participants.Add(ProjectViewModel.NewParticipant);
+                    // Husk at når du arbejder med Singleton så brug ikke andre lister hvis muligt.
+                    ParticipantCatalog.Instance.Participants?.Add(ProjectViewModel.NewParticipant);
                     ProjectViewModel.ProjectCatalog.Projects.Add(
                         ProjectViewModel.NewProject);
                     break;
